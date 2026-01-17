@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>K9 Specialist Business Card</title>
+<style>
+    /* -----------------------------------------------------------
+       1. FONTS & RESET
+       Using 'Teko' for a tall, tactical header look and 'Roboto' for body.
+    ----------------------------------------------------------- */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&family=Teko:wght@600;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 40px;
+        background-color: #333; /* Dark background for screen viewing */
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* -----------------------------------------------------------
+       2. CARD BASE (3.5in x 2in)
+    ----------------------------------------------------------- */
+    .card-container {
+        width: 3.5in;
+        height: 2in;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        display: flex;
+    }
+
+    /* -----------------------------------------------------------
+       3. FRONT DESIGN (K9 Style)
+    ----------------------------------------------------------- */
+    .front {
+        background: #0b0b0b;
+        color: white;
+    }
+
+    /* The Image Side (Right) */
+    .front-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 65%;
+        /* Fallback image of a Malinois/Shepherd type working dog */
+        background-image: url('dog.jpg'), url('https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80');
+        background-size: cover;
+        background-position: center;
+        /* A sharp tactical angle cut */
+        clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    /* The Text Side (Left) */
+    .front-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        background: #111;
+        padding: 20px 0 20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    /* Tactical Orange Accent */
+    :root {
+        --accent-color: #ff6600; /* Safety Orange / K9 Gear color */
+    }
+
+    h1 {
+        font-family: 'Teko', sans-serif;
+        font-size: 26pt;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 0.85;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+    h1 .surname {
+        color: var(--accent-color);
+    }
+
+    .subtitle {
+        font-size: 6pt;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #888;
+        margin-top: 10px;
+        font-weight: 700;
+        border-left: 2px solid var(--accent-color);
+        padding-left: 8px;
+    }
+
+    .breed-specialty {
+        margin-top: auto;
+        font-size: 5pt;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* -----------------------------------------------------------
+       4. BACK DESIGN (Info & Grid)
+    ----------------------------------------------------------- */
+    .back {
+        background: #1a1a1a;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .back-content {
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .service-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .service-item {
+        font-size: 6.5pt;
+        color: #ddd;
+        border: 1px solid #333;
+        padding: 4px 6px;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+    }
+
+    .service-item span {
+        color: var(--accent-color);
+        margin-right: 5px;
+        font-weight: bold;
+        font-size: 8pt;
+    }
+
+    .footer {
+        border-top: 1px solid #333;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact-block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .big-phone {
+        font-family: 'Teko', sans-serif;
+        font-size: 16pt;
+        color: white;
+        letter-spacing: 1px;
+        line-height: 1;
+    }
+
+    .social-line {
+        font-size: 6pt;
+        color: #999;
+        margin-top: 3px;
+    }
+
+    /* Placeholder QR area */
+    .qr-placeholder {
+        width: 40px;
+        height: 40px;
+        background: white;
+        padding: 2px;
+    }
+    .qr-placeholder img { width: 100%; height: 100%; }
+
+    /* EDITABLE HIGHLIGHTS 
+       (Visual cue for the client to know what to change) 
+    */
+    .editable {
+        border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    }
+
+    /* NanoBanana Branding */
+    .nano-tag {
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        font-size: 3px;
+        color: #ff69b4; /* Pink */
+        opacity: 0.7;
+    }
+
+    /* -----------------------------------------------------------
+       5. PRINT
+    ----------------------------------------------------------- */
+    @media print {
+        body { background: none; padding: 0; }
+        .card-container { box-shadow: none; margin-bottom: 10px; page-break-inside: avoid; border: 1px dashed #ccc; }
+        .editable { border-bottom: none; } /* Removes dotted lines when printing */
+    }
+</style>
+</head>
+<body>
+
+    <div class="card-container front">
+        <div class="front-text">
+            <h1>
+                <span class="editable">ИМЕ</span><br>
+                <span class="surname editable">ФАМИЛИЯ</span>
+            </h1>
+            <div class="subtitle editable">ПРОФЕСИОНАЛЕН ТРЕНЬОР</div>
+            
+            <div class="breed-specialty">
+                НЕМСКИ ОВЧАРКИ • МАЛИНОА<br>
+                <span style="color:var(--accent-color)">+ ЛОВНИ (СКОРО)</span>
+            </div>
+        </div>
+        <div class="front-image"></div>
+    </div>
+
+    <div class="card-container back">
+        <div class="back-content">
+            
+            <div style="color:#888; font-size:6pt; text-transform:uppercase; margin-bottom:2px;">УСЛУГИ (РЕДАКТИРАЙ ТУК)</div>
+            <div class="service-grid">
+                <div class="service-item"><span>►</span> <span class="editable">Послушание</span></div>
+                <div class="service-item"><span>►</span> <span class="editable">Охрана и защита</span></div>
+                <div class="service-item"><span>►</span> <span class="editable">Следова работа</span></div>
+                <div class="service-item"><span>►</span> <span class="editable">Индивидуални</span></div>
+            </div>
+
+            <div class="footer">
+                <div class="contact-block">
+                    <div class="big-phone editable">088X XXX XXX</div>
+                    <div class="social-line">
+                        <span style="color:var(--accent-color)">WEB:</span> <span class="editable">@ВАШИЯТПРОФИЛ</span>
+                    </div>
+                </div>
+                
+                <div class="qr-placeholder">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://instagram.com" alt="QR">
+                </div>
+            </div>
+        </div>
+        
+        <div class="nano-tag">DESIGN BY NANOBANANA</div>
+    </div>
+
+</body>
+</html>

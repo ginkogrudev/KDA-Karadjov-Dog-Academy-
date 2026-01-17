@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KDA - Професионална академия за кучета. Немски овчарки, Малиноа, ловни и домашни кучета.">
+    <title>Karadjov Dog Academy | KDA</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#1a2e22',
+                        sand: '#F0EBE0',
+                        gold: '#C5A059',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-forest border-b border-white/10 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <span class="font-heading font-bold text-3xl tracking-tighter text-white">
+                        KDA
+                    </span>
+                    <div class="hidden md:block w-px h-6 bg-gold opacity-50"></div>
+                    <span class="hidden md:block font-heading text-sm tracking-widest uppercase text-gray-400">
+                        Karadjov Dog Academy
+                    </span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-white hover:text-gold transition-colors text-sm font-bold uppercase tracking-wider">За Нас</a>
+                    <a href="#specialization" class="text-white hover:text-gold transition-colors text-sm font-bold uppercase tracking-wider">Специализации</a>
+                    <a href="#services" class="text-white hover:text-gold transition-colors text-sm font-bold uppercase tracking-wider">Цени</a>
+                    <a href="#contact" class="btn-primary py-2 px-6 text-sm">Свържи се</a>
+                </div>
+
+                <button class="md:hidden text-white p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-forest border-t border-white/10 p-4">
+            <a href="#about" class="block py-3 text-white font-heading uppercase">За Нас</a>
+            <a href="#specialization" class="block py-3 text-white font-heading uppercase">Специализации</a>
+            <a href="#services" class="block py-3 text-white font-heading uppercase">Цени</a>
+        </div>
+    </nav>
+
+    <header class="relative h-screen w-full flex items-center bg-forest">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1558287588-6c84c3c3a44d?q=80&w=1920&auto=format&fit=crop" 
+                 alt="K9 Training" 
+                 class="w-full h-full object-cover opacity-80">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 w-full">
+            <div class="max-w-3xl pt-20">
+                <div class="inline-block border-l-4 border-gold pl-4 mb-6">
+                    <span class="text-gold font-heading font-bold tracking-[0.2em] uppercase">
+                        Професионална Академия
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-heading font-bold text-white leading-tight mb-8">
+                    РЕЗУЛТАТ.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">НЕ ОБЕЩАНИЯ.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl font-light">
+                    Специализирано обучение за Немски овчарки, Малиноа и домашни кучета. Ние не продаваме надежди, ние изграждаме поведение.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#contact" class="btn-primary text-center">Запази Час</a>
+                    <a href="#services" class="btn-outline text-center">Виж Цените</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="specialization" class="py-24 bg-forest relative">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-white uppercase tracking-wide">Специализации</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-spec p-8">
+                    <h3 class="font-heading text-xl font-bold mb-3 uppercase">Немски Овчарки</h3>
+                    <p class="text-sm leading-relaxed">Специализирана работа за породата. Фокус, защита и послушание.</p>
+                </div>
+                
+                <div class="card-spec p-8">
+                    <h3 class="font-heading text-xl font-bold mb-3 uppercase">Малиноа</h3>
+                    <p class="text-sm leading-relaxed">Управление на високия драйв. Спортна и работна дисциплина.</p>
+                </div>
+
+                <div class="card-spec p-8">
+                    <h3 class="font-heading text-xl font-bold mb-3 uppercase">Домашни Кучета</h3>
+                    <p class="text-sm leading-relaxed">Йорки, Пудел, Померан. Хигиена и социализация за града.</p>
+                </div>
+
+                <div class="card-spec p-8 relative opacity-75">
+                    <span class="absolute top-3 right-3 text-[10px] font-bold bg-gold text-forest px-2 py-0.5 uppercase rounded-sm">Скоро</span>
+                    <h3 class="font-heading text-xl font-bold mb-3 uppercase text-gray-400">Ловни Кучета</h3>
+                    <p class="text-sm leading-relaxed text-gray-500">Подготовка за терен. Апортиране и работа с изстрели.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-sand bg-grain">
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-forest uppercase">Услуги и Цени</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white border-l-4 border-forest p-10 shadow-lg hover:shadow-2xl transition-shadow">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Стандарт</span>
+                    <h3 class="font-heading text-3xl font-bold text-forest mt-2 mb-6 uppercase">Пакет Тренировки</h3>
+                    
+                    <ul class="space-y-4 mb-8 text-sm font-medium text-gray-700">
+                        <li class="flex items-center"><span class="text-gold mr-3">✔</span> Индивидуален план</li>
+                        <li class="flex items-center"><span class="text-gold mr-3">✔</span> Основни команди</li>
+                        <li class="flex items-center"><span class="text-gold mr-3">✔</span> Корекция на поведение</li>
+                    </ul>
+
+                    <div class="border-t border-gray-100 pt-6 flex justify-between items-end">
+                        <span class="text-lg font-bold text-gray-500">6 Тренировки</span>
+                        <span class="text-4xl font-heading font-bold text-forest">€276</span>
+                    </div>
+                </div>
+
+                <div class="bg-forest border-l-4 border-gold p-10 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gold text-forest text-xs font-bold px-4 py-1 uppercase">Препоръчано</div>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Интензивно</span>
+                    <h3 class="font-heading text-3xl font-bold text-white mt-2 mb-6 uppercase">Пансионно Обучение</h3>
+                    
+                    <ul class="space-y-4 mb-8 text-sm font-medium text-gray-300">
+                        <li class="flex items-center"><span class="text-gold mr-3">✔</span> 24/7 Работа с треньора</li>
+                        <li class="flex items-center"><span class="text-gold mr-3">✔</span> Връщане при пълен резултат</li>
+                        <li class="flex items-center"><span class="text-gold mr-3">✔</span> Обучение на собственика</li>
+                    </ul>
+
+                    <div class="border-t border-white/10 pt-6 flex justify-between items-end">
+                        <span class="text-lg font-bold text-gray-400">Пълен курс</span>
+                        <div class="text-right">
+                            <span class="text-3xl font-heading font-bold text-white">€870 - €1200</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-forest py-12 border-t border-white/5 text-center">
+        <p class="text-white font-heading text-2xl font-bold tracking-tight mb-2">KDA</p>
+        <p class="text-xs text-gray-500 uppercase tracking-widest">&copy; 2025 Karadjov Dog Academy.</p>
+    </footer>
+
+</body>
+</html>

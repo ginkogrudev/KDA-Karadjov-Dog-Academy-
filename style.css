@@ -1,5 +1,5 @@
 /* -----------------------------------------------------------
-   1. DESIGN TOKENS & RESET
+   1. DESIGN TOKENS (The DNA)
 ----------------------------------------------------------- */
 :root {
     --color-forest: #1a2e22;      /* Primary Dark */
@@ -7,34 +7,36 @@
     --color-text-dark: #0f1a13;   /* High Contrast Text */
     --color-text-light: #ffffff;  /* Light Text */
     --color-gold: #C5A059;        /* Accent */
-    --color-gold-hover: #d4b875;
-}
-
-body {
-    background-color: var(--color-sand);
-    color: var(--color-text-dark);
-    -webkit-font-smoothing: antialiased;
+    --color-gold-hover: #d4b875;  /* Button Hover */
 }
 
 /* -----------------------------------------------------------
-   2. UTILITY CLASSES (The "Mozi" Punch)
+   2. GLOBAL RESET & TYPOGRAPHY
+----------------------------------------------------------- */
+body {
+    background-color: var(--color-sand);
+    color: var(--color-text-dark);
+    -webkit-font-smoothing: antialiased; /* Crisp text on Mac */
+}
+
+/* -----------------------------------------------------------
+   3. VISUAL EFFECTS (The "Mozi" Punch)
 ----------------------------------------------------------- */
 
-/* HERO OVERLAY: The "Fix" for invisible text */
-/* Creates a heavy dark fade from left to right */
+/* HERO OVERLAY: Ensures text is readable over any image */
 .hero-overlay {
     background: linear-gradient(
         to right, 
-        rgba(26, 46, 34, 0.95) 0%,   /* Solid Forest Green */
+        rgba(26, 46, 34, 0.95) 0%,   /* Solid Forest Green Left */
         rgba(26, 46, 34, 0.85) 40%, 
-        rgba(26, 46, 34, 0.4) 100% 
+        rgba(26, 46, 34, 0.4) 100%   /* Transparent Right */
     );
     position: absolute;
     inset: 0;
     z-index: 1;
 }
 
-/* TEXTURE: Adds the military grain effect */
+/* TEXTURE: Adds the "Tactical Paper" grain effect */
 .bg-grain {
     position: relative;
 }
@@ -50,10 +52,10 @@ body {
 }
 
 /* -----------------------------------------------------------
-   3. COMPONENT ARCHITECTURE
+   4. COMPONENTS
 ----------------------------------------------------------- */
 
-/* BUTTONS: Tactical Cut */
+/* BUTTONS: Tactical "Dog Tag" Cut */
 .btn-primary {
     background-color: var(--color-gold);
     color: var(--color-text-dark);
@@ -74,8 +76,8 @@ body {
 }
 
 .btn-outline {
-    border: 2px solid var(--color-gold);
-    color: var(--color-gold);
+    border: 2px solid #ffffff;
+    color: #ffffff;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
@@ -86,11 +88,12 @@ body {
 }
 
 .btn-outline:hover {
-    background-color: var(--color-gold);
-    color: var(--color-text-dark);
+    background-color: #ffffff;
+    color: var(--color-forest);
 }
 
 /* CARDS: Services & Specs */
+/* This fixes the "Invisible Text" issue on dark cards */
 .card-spec {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -101,10 +104,10 @@ body {
     border-color: var(--color-gold);
 }
 
-/* Fixing the "Invisible Text" on dark cards */
 .card-spec h3 {
     color: var(--color-gold);
 }
+
 .card-spec p {
-    color: rgba(255, 255, 255, 0.7); /* Readable light gray */
+    color: rgba(255, 255, 255, 0.7);
 }
